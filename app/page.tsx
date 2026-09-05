@@ -13,23 +13,25 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
+const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 const photos = [
-  { src: '/images/mercy-12.jpeg', alt: 'Mercy sonriendo con su vestido rojo a cuadros' },
-  { src: '/images/mercy-14.jpeg', alt: 'Mercy con un hermoso ramo de flores rosadas' },
-  { src: '/images/mercy-07.jpeg', alt: 'Mercy tomándose una foto frente a un espejo' },
-  { src: '/images/mercy-15.jpeg', alt: 'Mercy disfrutando un jardín lleno de flores' },
-  { src: '/images/mercy-01.jpeg', alt: 'Primer plano de Mercy sonriendo' },
-  { src: '/images/mercy-10.jpeg', alt: 'Mercy con vestido celeste y una sonrisa suave' },
-  { src: '/images/mercy-08.jpeg', alt: 'Mercy sonriendo frente a un espejo' },
-  { src: '/images/mercy-11.jpeg', alt: 'Retrato de Mercy con el cabello color vino' },
-  { src: '/images/mercy-04.jpeg', alt: 'Mercy descansando y sonriendo' },
-  { src: '/images/mercy-09.jpeg', alt: 'Mercy paseando en un día soleado' },
-  { src: '/images/mercy-06.jpeg', alt: 'Mercy usando lentes de sol' },
-  { src: '/images/mercy-13.jpeg', alt: 'Selfie soleada de Mercy' },
-  { src: '/images/mercy-16.jpeg', alt: 'Mercy en un jardín tropical' },
-  { src: '/images/mercy-02.jpeg', alt: 'Collage de selfies de Mercy' },
-  { src: '/images/mercy-03.jpeg', alt: 'Retrato cálido de Mercy' },
-  { src: '/images/mercy-05.jpeg', alt: 'Collage de la mirada de Mercy' },
+  { src: assetPath('/images/mercy-12.jpeg'), alt: 'Mercy sonriendo con su vestido rojo a cuadros' },
+  { src: assetPath('/images/mercy-14.jpeg'), alt: 'Mercy con un hermoso ramo de flores rosadas' },
+  { src: assetPath('/images/mercy-07.jpeg'), alt: 'Mercy tomándose una foto frente a un espejo' },
+  { src: assetPath('/images/mercy-15.jpeg'), alt: 'Mercy disfrutando un jardín lleno de flores' },
+  { src: assetPath('/images/mercy-01.jpeg'), alt: 'Primer plano de Mercy sonriendo' },
+  { src: assetPath('/images/mercy-10.jpeg'), alt: 'Mercy con vestido celeste y una sonrisa suave' },
+  { src: assetPath('/images/mercy-08.jpeg'), alt: 'Mercy sonriendo frente a un espejo' },
+  { src: assetPath('/images/mercy-11.jpeg'), alt: 'Retrato de Mercy con el cabello color vino' },
+  { src: assetPath('/images/mercy-04.jpeg'), alt: 'Mercy descansando y sonriendo' },
+  { src: assetPath('/images/mercy-09.jpeg'), alt: 'Mercy paseando en un día soleado' },
+  { src: assetPath('/images/mercy-06.jpeg'), alt: 'Mercy usando lentes de sol' },
+  { src: assetPath('/images/mercy-13.jpeg'), alt: 'Selfie soleada de Mercy' },
+  { src: assetPath('/images/mercy-16.jpeg'), alt: 'Mercy en un jardín tropical' },
+  { src: assetPath('/images/mercy-02.jpeg'), alt: 'Collage de selfies de Mercy' },
+  { src: assetPath('/images/mercy-03.jpeg'), alt: 'Retrato cálido de Mercy' },
+  { src: assetPath('/images/mercy-05.jpeg'), alt: 'Collage de la mirada de Mercy' },
 ];
 
 const baseLikes = [
@@ -40,21 +42,21 @@ const baseLikes = [
 ];
 
 const flowers = [
-  { name: 'Rosa roja', meaning: 'Amor apasionado y deseo profundo.', mood: 'amor', color: '#e94f70', image: '/images/flowers/red-rose.jpg' },
-  { name: 'Rosa rosa', meaning: 'Agradecimiento, dulzura y admiración.', mood: 'admiracion', color: '#f39cba', image: '/images/flowers/pink-rose.jpg' },
-  { name: 'Girasol amarillo', meaning: 'Admiración, felicidad y lealtad.', mood: 'alegria', color: '#f2bd4e', image: '/images/flowers/sunflower-yellow.jpg' },
-  { name: 'Tulipán rojo', meaning: 'Amor verdadero y una declaración sincera.', mood: 'amor', color: '#ed5b5b', image: '/images/flowers/tulip-red.jpg' },
-  { name: 'Margarita blanca', meaning: 'Inocencia, verdad y sencillez.', mood: 'admiracion', color: '#e6c86e', image: '/images/flowers/daisy-white.jpg' },
-  { name: 'Lirio naranja', meaning: 'Pasión, energía y confianza.', mood: 'alegria', color: '#ef9a5a', image: '/images/flowers/lily-orange.jpg' },
-  { name: 'Tulipán amarillo', meaning: 'Amor alegre y esperanza.', mood: 'alegria', color: '#edc85d', image: '/images/flowers/tulip-yellow.jpg' },
-  { name: 'Clavel rojo', meaning: 'Amor profundo y admiración.', mood: 'amor', color: '#cf5267', image: '/images/flowers/carnation-red.jpg' },
-  { name: 'Lavanda morada', meaning: 'Lealtad, modestia y amor secreto.', mood: 'recuerdo', color: '#9b82cc', image: '/images/flowers/lavender-purple.jpg' },
-  { name: 'Hibisco rojo', meaning: 'Belleza, delicadeza y amor apasionado.', mood: 'amor', color: '#e45e6f', image: '/images/flowers/hibiscus-red.jpg' },
-  { name: 'Camelia blanca', meaning: 'Admiración y perfección.', mood: 'admiracion', color: '#d9bd86', image: '/images/flowers/camellia-white.jpg' },
-  { name: 'Sakura rosa pálido', meaning: 'Belleza efímera, renovación y esperanza.', mood: 'recuerdo', color: '#eaa7bb', image: '/images/flowers/sakura-pale-pink.jpg' },
-  { name: 'Crisantemo amarillo', meaning: 'Amistad y optimismo.', mood: 'alegria', color: '#e5b950', image: '/images/flowers/chrysanthemum-yellow.jpg' },
-  { name: 'Crisantemo blanco', meaning: 'Un “te amo” profundo.', mood: 'amor', color: '#c9b987', image: '/images/flowers/chrysanthemum-white.jpg' },
-  { name: 'Amapola roja', meaning: 'Recuerdo, consuelo y sacrificio.', mood: 'recuerdo', color: '#da5361', image: '/images/flowers/poppy-red.jpg' },
+  { name: 'Rosa roja', meaning: 'Amor apasionado y deseo profundo.', mood: 'amor', color: '#e94f70', image: assetPath('/images/flowers/red-rose.jpg') },
+  { name: 'Rosa rosa', meaning: 'Agradecimiento, dulzura y admiración.', mood: 'admiracion', color: '#f39cba', image: assetPath('/images/flowers/pink-rose.jpg') },
+  { name: 'Girasol amarillo', meaning: 'Admiración, felicidad y lealtad.', mood: 'alegria', color: '#f2bd4e', image: assetPath('/images/flowers/sunflower-yellow.jpg') },
+  { name: 'Tulipán rojo', meaning: 'Amor verdadero y una declaración sincera.', mood: 'amor', color: '#ed5b5b', image: assetPath('/images/flowers/tulip-red.jpg') },
+  { name: 'Margarita blanca', meaning: 'Inocencia, verdad y sencillez.', mood: 'admiracion', color: '#e6c86e', image: assetPath('/images/flowers/daisy-white.jpg') },
+  { name: 'Lirio naranja', meaning: 'Pasión, energía y confianza.', mood: 'alegria', color: '#ef9a5a', image: assetPath('/images/flowers/lily-orange.jpg') },
+  { name: 'Tulipán amarillo', meaning: 'Amor alegre y esperanza.', mood: 'alegria', color: '#edc85d', image: assetPath('/images/flowers/tulip-yellow.jpg') },
+  { name: 'Clavel rojo', meaning: 'Amor profundo y admiración.', mood: 'amor', color: '#cf5267', image: assetPath('/images/flowers/carnation-red.jpg') },
+  { name: 'Lavanda morada', meaning: 'Lealtad, modestia y amor secreto.', mood: 'recuerdo', color: '#9b82cc', image: assetPath('/images/flowers/lavender-purple.jpg') },
+  { name: 'Hibisco rojo', meaning: 'Belleza, delicadeza y amor apasionado.', mood: 'amor', color: '#e45e6f', image: assetPath('/images/flowers/hibiscus-red.jpg') },
+  { name: 'Camelia blanca', meaning: 'Admiración y perfección.', mood: 'admiracion', color: '#d9bd86', image: assetPath('/images/flowers/camellia-white.jpg') },
+  { name: 'Sakura rosa pálido', meaning: 'Belleza efímera, renovación y esperanza.', mood: 'recuerdo', color: '#eaa7bb', image: assetPath('/images/flowers/sakura-pale-pink.jpg') },
+  { name: 'Crisantemo amarillo', meaning: 'Amistad y optimismo.', mood: 'alegria', color: '#e5b950', image: assetPath('/images/flowers/chrysanthemum-yellow.jpg') },
+  { name: 'Crisantemo blanco', meaning: 'Un “te amo” profundo.', mood: 'amor', color: '#c9b987', image: assetPath('/images/flowers/chrysanthemum-white.jpg') },
+  { name: 'Amapola roja', meaning: 'Recuerdo, consuelo y sacrificio.', mood: 'recuerdo', color: '#da5361', image: assetPath('/images/flowers/poppy-red.jpg') },
 ];
 
 const flowerFilters = [
@@ -222,11 +224,11 @@ export default function Home() {
 
         <div className="hero-collage" aria-label="Fotos destacadas de Mercy">
           <div className="photo-card photo-card-main" data-parallax="-0.05">
-            <img src="/images/mercy-12.jpeg" alt="Mercy sonriendo frente a un espejo" />
+            <img src={assetPath('/images/mercy-12.jpeg')} alt="Mercy sonriendo frente a un espejo" />
             <span>mi niña bonita ♡</span>
           </div>
           <div className="photo-card photo-card-small" data-parallax="0.08">
-            <img src="/images/mercy-14.jpeg" alt="Mercy recibiendo un ramo rosado" />
+            <img src={assetPath('/images/mercy-14.jpeg')} alt="Mercy recibiendo un ramo rosado" />
           </div>
           <div className="mini-note" data-parallax="-0.11">
             <Flower2 aria-hidden="true" />
@@ -248,9 +250,9 @@ export default function Home() {
           <p>No solo apareces en una fotografía: haces que cada recuerdo tenga más luz. Reuní aquí un poquito de todo lo que te hace única.</p>
         </div>
         <div className="portrait-ribbon" data-parallax="0.025">
-          <figure><img src="/images/mercy-11.jpeg" alt="Retrato cercano de Mercy" /><figcaption>dulce</figcaption></figure>
-          <figure><img src="/images/mercy-07.jpeg" alt="Mercy sonriendo en un espejo" /><figcaption>auténtica</figcaption></figure>
-          <figure><img src="/images/mercy-10.jpeg" alt="Mercy con vestido celeste" /><figcaption>inolvidable</figcaption></figure>
+          <figure><img src={assetPath('/images/mercy-11.jpeg')} alt="Retrato cercano de Mercy" /><figcaption>dulce</figcaption></figure>
+          <figure><img src={assetPath('/images/mercy-07.jpeg')} alt="Mercy sonriendo en un espejo" /><figcaption>auténtica</figcaption></figure>
+          <figure><img src={assetPath('/images/mercy-10.jpeg')} alt="Mercy con vestido celeste" /><figcaption>inolvidable</figcaption></figure>
         </div>
       </section>
 
@@ -266,7 +268,7 @@ export default function Home() {
 
           <figure className="sanrio-banner">
             <img
-              src="/images/sanrio-garden.png"
+              src={assetPath('/images/sanrio-garden.png')}
               alt="Hello Kitty y Cinnamoroll juntos en un jardín pastel lleno de rosas y moños"
             />
           </figure>
