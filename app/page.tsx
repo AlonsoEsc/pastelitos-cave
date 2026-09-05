@@ -269,7 +269,6 @@ export default function Home() {
               src="/images/sanrio-garden.png"
               alt="Hello Kitty y Cinnamoroll juntos en un jardín pastel lleno de rosas y moños"
             />
-            <figcaption>Un jardín rosadito para tus dos favoritos.</figcaption>
           </figure>
 
           <div className="likes-grid">
