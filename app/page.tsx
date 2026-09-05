@@ -33,10 +33,36 @@ const photos = [
 ];
 
 const baseLikes = [
-  { name: 'Hello Kitty', note: 'Moñitos, ternura y ese toque clásico que siempre le queda perfecto.', tone: 'cherry' },
-  { name: 'Cinnamoroll', note: 'Nubecitas suaves, celeste y toda la calma del personaje más dulce.', tone: 'cloud' },
-  { name: 'Todo rosadito', note: 'Desde los pequeños detalles hasta un mundo entero teñido de rosa.', tone: 'pink' },
-  { name: 'Las flores', note: 'Cada una con su propio significado, como los recuerdos bonitos.', tone: 'flower' },
+  { name: 'Hello Kitty', note: 'Los moñitos, los pequeños detalles y una ternura que nunca pasa de moda.', tone: 'cherry' },
+  { name: 'Cinnamoroll', note: 'Nubes suaves, azul cielo y esa tranquilidad que se siente como un abrazo.', tone: 'cloud' },
+  { name: 'Todo rosadito', note: 'El color que convierte cualquier rincón en algo más alegre y especial.', tone: 'pink' },
+  { name: 'Las flores', note: 'Porque cada flor puede guardar un sentimiento y contar una historia distinta.', tone: 'flower' },
+];
+
+const flowers = [
+  { name: 'Rosa roja', meaning: 'Amor apasionado y deseo profundo.', mood: 'amor', color: '#e94f70' },
+  { name: 'Rosa rosa', meaning: 'Agradecimiento, dulzura y admiración.', mood: 'admiracion', color: '#f39cba' },
+  { name: 'Girasol amarillo', meaning: 'Admiración, felicidad y lealtad.', mood: 'alegria', color: '#f2bd4e' },
+  { name: 'Tulipán rojo', meaning: 'Amor verdadero y una declaración sincera.', mood: 'amor', color: '#ed5b5b' },
+  { name: 'Margarita blanca', meaning: 'Inocencia, verdad y sencillez.', mood: 'admiracion', color: '#e6c86e' },
+  { name: 'Lirio naranja', meaning: 'Pasión, energía y confianza.', mood: 'alegria', color: '#ef9a5a' },
+  { name: 'Tulipán amarillo', meaning: 'Amor alegre y esperanza.', mood: 'alegria', color: '#edc85d' },
+  { name: 'Clavel rojo', meaning: 'Amor profundo y admiración.', mood: 'amor', color: '#cf5267' },
+  { name: 'Lavanda morada', meaning: 'Lealtad, modestia y amor secreto.', mood: 'recuerdo', color: '#9b82cc' },
+  { name: 'Hibisco rojo', meaning: 'Belleza, delicadeza y amor apasionado.', mood: 'amor', color: '#e45e6f' },
+  { name: 'Camelia blanca', meaning: 'Admiración y perfección.', mood: 'admiracion', color: '#d9bd86' },
+  { name: 'Sakura rosa pálido', meaning: 'Belleza efímera, renovación y esperanza.', mood: 'recuerdo', color: '#eaa7bb' },
+  { name: 'Crisantemo amarillo', meaning: 'Amistad y optimismo.', mood: 'alegria', color: '#e5b950' },
+  { name: 'Crisantemo blanco', meaning: 'Un “te amo” profundo.', mood: 'amor', color: '#c9b987' },
+  { name: 'Amapola roja', meaning: 'Recuerdo, consuelo y sacrificio.', mood: 'recuerdo', color: '#da5361' },
+];
+
+const flowerFilters = [
+  { value: 'todas', label: 'Todas' },
+  { value: 'amor', label: 'Amor' },
+  { value: 'admiracion', label: 'Admiración' },
+  { value: 'alegria', label: 'Alegría' },
+  { value: 'recuerdo', label: 'Recuerdo' },
 ];
 
 type WebMCPContext = {
@@ -53,7 +79,7 @@ type WebMCPContext = {
 function useParallax() {
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-parallax]'));
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 768px)').matches) return;
     let frame = 0;
     const update = () => {
       const y = window.scrollY;
@@ -81,6 +107,7 @@ export default function Home() {
   const [paused, setPaused] = useState(false);
   const [customLikes, setCustomLikes] = useState<string[]>([]);
   const [newLike, setNewLike] = useState('');
+  const [flowerMood, setFlowerMood] = useState('todas');
 
   useEffect(() => {
     const saved = window.localStorage.getItem('mercy-favorites');
@@ -100,6 +127,10 @@ export default function Home() {
   }, [carouselApi, paused]);
 
   const totalLikes = useMemo(() => baseLikes.length + customLikes.length, [customLikes]);
+  const visibleFlowers = useMemo(
+    () => flowerMood === 'todas' ? flowers : flowers.filter((flower) => flower.mood === flowerMood),
+    [flowerMood],
+  );
 
   useEffect(() => {
     const context = (document as Document & { modelContext?: WebMCPContext }).modelContext;
@@ -164,7 +195,7 @@ export default function Home() {
           <h1>Mariela<br />Alejandra</h1>
           <div className="mercy-script">Mercy</div>
           <p className="hero-intro">
-            Para la niña que vuelve más bonito el mundo con su sonrisa, sus colores y su manera tan especial de ser.
+            Para Mercy, que sabe convertir los días comunes en recuerdos que vale la pena guardar.
           </p>
           <a className="love-button" href="#ella">
             Ver su mundo <Heart aria-hidden="true" fill="currentColor" />
@@ -181,7 +212,7 @@ export default function Home() {
           </div>
           <div className="mini-note" data-parallax="-0.11">
             <Flower2 aria-hidden="true" />
-            <span>ella florece<br />donde va</span>
+            <span>un lugar hecho<br />a su medida</span>
           </div>
         </div>
 
@@ -195,8 +226,8 @@ export default function Home() {
           <h2>Ella es <em>Mercy</em></h2>
         </div>
         <div className="intro-text">
-          <p>Mariela Alejandra Cruz Aguirre.</p>
-          <p>Una colección de miradas bonitas, sonrisas sinceras y momentos que merecen guardarse para siempre.</p>
+          <p>Mariela Alejandra Cruz Aguirre; para quienes la quieren, simplemente Mercy.</p>
+          <p>Hay personas que no solo aparecen en una fotografía: también le dan luz al recuerdo. Este rincón reúne un poco de todo lo que la hace única.</p>
         </div>
         <div className="portrait-ribbon" data-parallax="0.025">
           <figure><img src="/images/mercy-11.jpeg" alt="Retrato cercano de Mercy" /><figcaption>dulce</figcaption></figure>
@@ -206,17 +237,22 @@ export default function Home() {
       </section>
 
       <section id="favoritos" className="favorites-section">
-        <div className="flower-backdrop" data-parallax="-0.035">
-          <img src="/images/floriografia.jpeg" alt="Guía ilustrada del significado de distintas flores" />
-        </div>
         <div className="favorites-panel section-wrap">
           <div className="favorites-heading">
             <div>
               <p className="eyebrow light"><Flower2 aria-hidden="true" /> su pequeño universo</p>
-              <h2>Cosas que hacen<br /><em>feliz a Mercy</em></h2>
+              <h2>Detalles que alegran<br /><em>el mundo de Mercy</em></h2>
             </div>
             <p>{totalLikes.toString().padStart(2, '0')} favoritos guardados</p>
           </div>
+
+          <figure className="sanrio-banner">
+            <img
+              src="/images/sanrio-garden.png"
+              alt="Hello Kitty y Cinnamoroll juntos en un jardín pastel lleno de rosas y moños"
+            />
+            <figcaption>Un jardín rosadito para sus dos favoritos.</figcaption>
+          </figure>
 
           <div className="likes-grid">
             {baseLikes.map((item, index) => (
@@ -234,7 +270,7 @@ export default function Home() {
                 <span className="like-index">{String(baseLikes.length + index + 1).padStart(2, '0')}</span>
                 <Heart className="like-icon" aria-hidden="true" />
                 <h3>{item}</h3>
-                <p>Otra cosita que pertenece al mundo de Mercy.</p>
+                <p>Otro detalle que merece un espacio en su colección.</p>
                 <Button
                   variant="ghost"
                   size="icon-sm"
@@ -264,6 +300,44 @@ export default function Home() {
             </div>
             <small>Se guarda en este dispositivo para que el rinconcito siga creciendo.</small>
           </form>
+
+          <div className="floriography" aria-labelledby="floriography-title">
+            <div className="floriography-heading">
+              <div>
+                <p className="eyebrow"><Flower2 aria-hidden="true" /> inspirado en su guía de flores</p>
+                <h2 id="floriography-title">Una floriografía<br /><em>para Mercy</em></h2>
+              </div>
+              <p>Un pequeño diccionario para elegir una flor según lo que quieras decirle.</p>
+            </div>
+
+            <div className="flower-filters" aria-label="Filtrar flores por sentimiento">
+              {flowerFilters.map((filter) => (
+                <Button
+                  key={filter.value}
+                  type="button"
+                  variant={flowerMood === filter.value ? 'default' : 'outline'}
+                  aria-pressed={flowerMood === filter.value}
+                  onClick={() => setFlowerMood(filter.value)}
+                >
+                  {filter.label}
+                </Button>
+              ))}
+            </div>
+
+            <div className="flower-grid" aria-live="polite">
+              {visibleFlowers.map((flower) => (
+                <article className="flower-card" key={flower.name}>
+                  <span className="flower-symbol" style={{ color: flower.color }} aria-hidden="true">
+                    <Flower2 />
+                  </span>
+                  <div>
+                    <h3>{flower.name}</h3>
+                    <p>{flower.meaning}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -273,7 +347,7 @@ export default function Home() {
             <p className="eyebrow">momentos para guardar</p>
             <h2>Un carrete lleno<br />de <em>ella</em></h2>
           </div>
-          <p>Desliza, usa las flechas o deja que los recuerdos pasen solitos.</p>
+          <p>Un recorrido por esos instantes que tienen algo especial porque ella está en ellos.</p>
         </div>
 
         <Carousel
@@ -310,9 +384,9 @@ export default function Home() {
         <div className="letter-card">
           <Sparkles className="letter-sparkle" aria-hidden="true" />
           <p className="eyebrow">para ti, Mercy</p>
-          <h2>Gracias por existir<br />tan <em>bonito</em>.</h2>
+          <h2>Que nunca olvides<br />lo <em>especial</em> que eres.</h2>
           <p>
-            Hice este pequeño rincón para que siempre recuerdes lo especial que eres. Para guardar tus sonrisas, tus gustos y todas esas cositas que hacen que seas tú.
+            Este lugar guarda tus sonrisas, tus colores y esos pequeños detalles que te hacen ser tú. Ojalá cada visita te recuerde cuánto cariño cabe en tu nombre.
           </p>
           <div className="letter-signature">Con mucho amor <Heart fill="currentColor" aria-hidden="true" /></div>
         </div>
