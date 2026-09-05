@@ -33,7 +33,7 @@ const photos = [
 ];
 
 const baseLikes = [
-  { name: 'Hello Kitty', note: 'Los moñitos, los pequeños detalles y una ternura que nunca pasa de moda.', tone: 'cherry' },
+  { name: 'Hello Kitty', note: 'Los moñitos, los pequeños detalles y esa ternura que combina tan bonito contigo.', tone: 'cherry' },
   { name: 'Cinnamoroll', note: 'Nubes suaves, azul cielo y esa tranquilidad que se siente como un abrazo.', tone: 'cloud' },
   { name: 'Todo rosadito', note: 'El color que convierte cualquier rincón en algo más alegre y especial.', tone: 'pink' },
   { name: 'Las flores', note: 'Porque cada flor puede guardar un sentimiento y contar una historia distinta.', tone: 'flower' },
@@ -158,7 +158,7 @@ export default function Home() {
     void Promise.resolve(context.registerTool({
       name: 'add_mercy_favorite',
       title: 'Agregar favorito de Mercy',
-      description: 'Añade una nueva cosa que le gusta a Mercy y la muestra en la sección de favoritos.',
+      description: 'Añade una nueva cosa que te gusta y la muestra en la sección de favoritos de Mercy.',
       inputSchema: {
         type: 'object',
         properties: { favorite: { type: 'string', minLength: 1, maxLength: 60 } },
@@ -198,9 +198,9 @@ export default function Home() {
       <nav className="floating-nav" aria-label="Navegación principal">
         <a className="brand-mark" href="#inicio" aria-label="Ir al inicio">M</a>
         <div className="nav-links">
-          <a href="#ella">Ella</a>
-          <a href="#favoritos">Sus favoritos</a>
-          <a href="#recuerdos">Recuerdos</a>
+          <a href="#ti">Tú</a>
+          <a href="#favoritos">Tus favoritos</a>
+          <a href="#recuerdos">Tus recuerdos</a>
         </div>
         <a className="nav-heart" href="#carta" aria-label="Ir a la carta final"><Heart aria-hidden="true" /></a>
       </nav>
@@ -213,10 +213,10 @@ export default function Home() {
           <h1>Mariela<br />Alejandra</h1>
           <div className="mercy-script">Mercy</div>
           <p className="hero-intro">
-            Para Mercy, que sabe convertir los días comunes en recuerdos que vale la pena guardar.
+            Para ti, Mercy, porque conviertes los días comunes en recuerdos que quiero guardar.
           </p>
-          <a className="love-button" href="#ella">
-            Ver su mundo <Heart aria-hidden="true" fill="currentColor" />
+          <a className="love-button" href="#ti">
+            Entrar en tu mundo <Heart aria-hidden="true" fill="currentColor" />
           </a>
         </div>
 
@@ -230,22 +230,22 @@ export default function Home() {
           </div>
           <div className="mini-note" data-parallax="-0.11">
             <Flower2 aria-hidden="true" />
-            <span>un lugar hecho<br />a su medida</span>
+            <span>un lugar hecho<br />para ti</span>
           </div>
         </div>
 
         <div className="scroll-cue" aria-hidden="true"><span /> sigue bajando</div>
       </section>
 
-      <section id="ella" className="intro-section section-wrap">
+      <section id="ti" className="intro-section section-wrap">
         <div className="section-number">01</div>
         <div className="intro-title">
-          <p className="eyebrow">la protagonista</p>
-          <h2>Ella es <em>Mercy</em></h2>
+          <p className="eyebrow">la protagonista de este rincón</p>
+          <h2>Tú eres <em>Mercy</em></h2>
         </div>
         <div className="intro-text">
-          <p>Mariela Alejandra Cruz Aguirre; para quienes la quieren, simplemente Mercy.</p>
-          <p>Hay personas que no solo aparecen en una fotografía: también le dan luz al recuerdo. Este rincón reúne un poco de todo lo que la hace única.</p>
+          <p>Tu nombre es Mariela Alejandra Cruz Aguirre, aunque para mí siempre eres Mercy.</p>
+          <p>No solo apareces en una fotografía: haces que cada recuerdo tenga más luz. Reuní aquí un poquito de todo lo que te hace única.</p>
         </div>
         <div className="portrait-ribbon" data-parallax="0.025">
           <figure><img src="/images/mercy-11.jpeg" alt="Retrato cercano de Mercy" /><figcaption>dulce</figcaption></figure>
@@ -258,8 +258,8 @@ export default function Home() {
         <div className="favorites-panel section-wrap">
           <div className="favorites-heading">
             <div>
-              <p className="eyebrow light"><Flower2 aria-hidden="true" /> su pequeño universo</p>
-              <h2>Detalles que alegran<br /><em>el mundo de Mercy</em></h2>
+              <p className="eyebrow light"><Flower2 aria-hidden="true" /> tu pequeño universo</p>
+              <h2>Detalles que alegran<br /><em>tu mundo</em></h2>
             </div>
             <p>{totalLikes.toString().padStart(2, '0')} favoritos guardados</p>
           </div>
@@ -269,7 +269,7 @@ export default function Home() {
               src="/images/sanrio-garden.png"
               alt="Hello Kitty y Cinnamoroll juntos en un jardín pastel lleno de rosas y moños"
             />
-            <figcaption>Un jardín rosadito para sus dos favoritos.</figcaption>
+            <figcaption>Un jardín rosadito para tus dos favoritos.</figcaption>
           </figure>
 
           <div className="likes-grid">
@@ -288,7 +288,7 @@ export default function Home() {
                 <span className="like-index">{String(baseLikes.length + index + 1).padStart(2, '0')}</span>
                 <Heart className="like-icon" aria-hidden="true" />
                 <h3>{item}</h3>
-                <p>Otro detalle que merece un espacio en su colección.</p>
+                <p>Otro detalle que merece un espacio en tu colección.</p>
                 <Button
                   variant="ghost"
                   size="icon-sm"
@@ -303,7 +303,7 @@ export default function Home() {
           </div>
 
           <form className="add-like" onSubmit={addLike}>
-            <label htmlFor="new-favorite">¿Qué otra cosita le encanta?</label>
+            <label htmlFor="new-favorite">¿Qué otra cosita te encanta?</label>
             <div className="add-like-controls">
               <Input
                 id="new-favorite"
@@ -322,7 +322,7 @@ export default function Home() {
           <div className="floriography" aria-labelledby="floriography-title">
             <div className="floriography-heading">
               <div>
-                <p className="eyebrow"><Flower2 aria-hidden="true" /> inspirado en su guía de flores</p>
+                <p className="eyebrow"><Flower2 aria-hidden="true" /> inspirado en tu guía de flores</p>
                 <h2 id="floriography-title">Una floriografía<br /><em>para Mercy</em></h2>
               </div>
               <p>Un pequeño diccionario para elegir una flor según lo que quieras decirle.</p>
@@ -375,9 +375,9 @@ export default function Home() {
         <div className="gallery-heading">
           <div>
             <p className="eyebrow">momentos para guardar</p>
-            <h2>Un carrete lleno<br />de <em>ella</em></h2>
+            <h2>Un carrete lleno<br />de <em>ti</em></h2>
           </div>
-          <p>Un recorrido por esos instantes que tienen algo especial porque ella está en ellos.</p>
+          <p>Un recorrido por esos instantes que se vuelven especiales porque tú estás en ellos.</p>
         </div>
 
         <Carousel
@@ -425,7 +425,7 @@ export default function Home() {
       <footer>
         <span>Mariela Alejandra Cruz Aguirre</span>
         <Heart fill="currentColor" aria-hidden="true" />
-        <span>hecho especialmente para Mercy</span>
+        <span>hecho especialmente para ti</span>
       </footer>
     </main>
   );
