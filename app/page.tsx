@@ -196,7 +196,7 @@ export default function Home() {
   return (
     <main className="site-shell">
       <nav className="floating-nav" aria-label="Navegación principal">
-        <a className="brand-mark" href="#inicio" aria-label="Ir al inicio">M</a>
+        <a className="brand-mark" href="#inicio" aria-label="Ir al inicio de Pastelito’s cave">P</a>
         <div className="nav-links">
           <a href="#ti">Tú</a>
           <a href="#favoritos">Tus favoritos</a>
@@ -422,7 +422,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <span>Mariela Alejandra Cruz Aguirre</span>
+        <span>Pastelito’s cave 😗🤭</span>
         <Heart fill="currentColor" aria-hidden="true" />
         <span>hecho especialmente para ti</span>
       </footer>

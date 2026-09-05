@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Mercy — Un mundo rosadito',
+  title: 'Pastelito’s cave 😗🤭',
   description: 'Un rincón hecho con amor para Mariela Alejandra Cruz Aguirre.',
 };
 
