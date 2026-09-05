@@ -40,21 +40,21 @@ const baseLikes = [
 ];
 
 const flowers = [
-  { name: 'Rosa roja', meaning: 'Amor apasionado y deseo profundo.', mood: 'amor', color: '#e94f70' },
-  { name: 'Rosa rosa', meaning: 'Agradecimiento, dulzura y admiración.', mood: 'admiracion', color: '#f39cba' },
-  { name: 'Girasol amarillo', meaning: 'Admiración, felicidad y lealtad.', mood: 'alegria', color: '#f2bd4e' },
-  { name: 'Tulipán rojo', meaning: 'Amor verdadero y una declaración sincera.', mood: 'amor', color: '#ed5b5b' },
-  { name: 'Margarita blanca', meaning: 'Inocencia, verdad y sencillez.', mood: 'admiracion', color: '#e6c86e' },
-  { name: 'Lirio naranja', meaning: 'Pasión, energía y confianza.', mood: 'alegria', color: '#ef9a5a' },
-  { name: 'Tulipán amarillo', meaning: 'Amor alegre y esperanza.', mood: 'alegria', color: '#edc85d' },
-  { name: 'Clavel rojo', meaning: 'Amor profundo y admiración.', mood: 'amor', color: '#cf5267' },
-  { name: 'Lavanda morada', meaning: 'Lealtad, modestia y amor secreto.', mood: 'recuerdo', color: '#9b82cc' },
-  { name: 'Hibisco rojo', meaning: 'Belleza, delicadeza y amor apasionado.', mood: 'amor', color: '#e45e6f' },
-  { name: 'Camelia blanca', meaning: 'Admiración y perfección.', mood: 'admiracion', color: '#d9bd86' },
-  { name: 'Sakura rosa pálido', meaning: 'Belleza efímera, renovación y esperanza.', mood: 'recuerdo', color: '#eaa7bb' },
-  { name: 'Crisantemo amarillo', meaning: 'Amistad y optimismo.', mood: 'alegria', color: '#e5b950' },
-  { name: 'Crisantemo blanco', meaning: 'Un “te amo” profundo.', mood: 'amor', color: '#c9b987' },
-  { name: 'Amapola roja', meaning: 'Recuerdo, consuelo y sacrificio.', mood: 'recuerdo', color: '#da5361' },
+  { name: 'Rosa roja', meaning: 'Amor apasionado y deseo profundo.', mood: 'amor', color: '#e94f70', image: '/images/flowers/red-rose.jpg' },
+  { name: 'Rosa rosa', meaning: 'Agradecimiento, dulzura y admiración.', mood: 'admiracion', color: '#f39cba', image: '/images/flowers/pink-rose.jpg' },
+  { name: 'Girasol amarillo', meaning: 'Admiración, felicidad y lealtad.', mood: 'alegria', color: '#f2bd4e', image: '/images/flowers/sunflower-yellow.jpg' },
+  { name: 'Tulipán rojo', meaning: 'Amor verdadero y una declaración sincera.', mood: 'amor', color: '#ed5b5b', image: '/images/flowers/tulip-red.jpg' },
+  { name: 'Margarita blanca', meaning: 'Inocencia, verdad y sencillez.', mood: 'admiracion', color: '#e6c86e', image: '/images/flowers/daisy-white.jpg' },
+  { name: 'Lirio naranja', meaning: 'Pasión, energía y confianza.', mood: 'alegria', color: '#ef9a5a', image: '/images/flowers/lily-orange.jpg' },
+  { name: 'Tulipán amarillo', meaning: 'Amor alegre y esperanza.', mood: 'alegria', color: '#edc85d', image: '/images/flowers/tulip-yellow.jpg' },
+  { name: 'Clavel rojo', meaning: 'Amor profundo y admiración.', mood: 'amor', color: '#cf5267', image: '/images/flowers/carnation-red.jpg' },
+  { name: 'Lavanda morada', meaning: 'Lealtad, modestia y amor secreto.', mood: 'recuerdo', color: '#9b82cc', image: '/images/flowers/lavender-purple.jpg' },
+  { name: 'Hibisco rojo', meaning: 'Belleza, delicadeza y amor apasionado.', mood: 'amor', color: '#e45e6f', image: '/images/flowers/hibiscus-red.jpg' },
+  { name: 'Camelia blanca', meaning: 'Admiración y perfección.', mood: 'admiracion', color: '#d9bd86', image: '/images/flowers/camellia-white.jpg' },
+  { name: 'Sakura rosa pálido', meaning: 'Belleza efímera, renovación y esperanza.', mood: 'recuerdo', color: '#eaa7bb', image: '/images/flowers/sakura-pale-pink.jpg' },
+  { name: 'Crisantemo amarillo', meaning: 'Amistad y optimismo.', mood: 'alegria', color: '#e5b950', image: '/images/flowers/chrysanthemum-yellow.jpg' },
+  { name: 'Crisantemo blanco', meaning: 'Un “te amo” profundo.', mood: 'amor', color: '#c9b987', image: '/images/flowers/chrysanthemum-white.jpg' },
+  { name: 'Amapola roja', meaning: 'Recuerdo, consuelo y sacrificio.', mood: 'recuerdo', color: '#da5361', image: '/images/flowers/poppy-red.jpg' },
 ];
 
 const flowerFilters = [
@@ -63,6 +63,24 @@ const flowerFilters = [
   { value: 'admiracion', label: 'Admiración' },
   { value: 'alegria', label: 'Alegría' },
   { value: 'recuerdo', label: 'Recuerdo' },
+];
+
+const flowerCredits = [
+  ['Rosa roja', 'Laitche · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:Red_rose_with_black_background.jpg'],
+  ['Rosa rosa', 'Acabashi · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:Pink_rose_bloom_of_a_climbing_rose_at_Boreham,_Essex,_England_1.jpg'],
+  ['Girasol amarillo', 'Rifat R · CC BY 4.0', 'https://commons.wikimedia.org/wiki/File:Common_Sunflower_in_Full_Bloom.jpg'],
+  ['Tulipán rojo', 'Marren01 · CC BY 4.0', 'https://commons.wikimedia.org/wiki/File:Garden_Red_tulip.jpg'],
+  ['Margarita blanca', 'Shadowmeld Photography · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:Oxeye_Daisy_Angle_PLT-FL-DS-1.jpg'],
+  ['Lirio naranja', 'Koshur · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:Orange_Lily_Flower.jpg'],
+  ['Tulipán amarillo', 'Derek Ramsey · CC BY-SA 2.5', 'https://commons.wikimedia.org/wiki/File:Unidentified_Tulip_Tulipa_Yellow_Flower_1536px.jpg'],
+  ['Clavel rojo', 'Rick Kimpel · CC BY-SA 2.0', 'https://commons.wikimedia.org/wiki/File:Red_Carnation_Flower.jpg'],
+  ['Lavanda morada', 'AnRo0002 · CC0', 'https://commons.wikimedia.org/wiki/File:20150822Lavandula_angustifolia.jpg'],
+  ['Hibisco rojo', 'Didier Descouens · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:(MHNT)_Hibiscus_moscheutos_-_Red_swamp_rose-mallow_flower_-_Les_Martels,_Giroussens_Tarn.jpg'],
+  ['Camelia blanca', 'Tim Green · CC BY 2.0', 'https://commons.wikimedia.org/wiki/File:White_camellia_(4546489366).jpg'],
+  ['Sakura rosa pálido', 'Marianna Popova · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:Pale_pink_sakura_flowers_in_Kioto_Park.jpg'],
+  ['Crisantemo amarillo', 'HuBoro · CC BY-SA 3.0', 'https://commons.wikimedia.org/wiki/File:Yellow_Chrysanthemum.jpg'],
+  ['Crisantemo blanco', 'Gowrivemban · CC0', 'https://commons.wikimedia.org/wiki/File:White_chrysanthemum_flower.jpg'],
+  ['Amapola roja', 'WI-Photos · CC0', 'https://commons.wikimedia.org/wiki/File:Red_Poppy2.jpg'],
 ];
 
 type WebMCPContext = {
@@ -327,16 +345,28 @@ export default function Home() {
             <div className="flower-grid" aria-live="polite">
               {visibleFlowers.map((flower) => (
                 <article className="flower-card" key={flower.name}>
-                  <span className="flower-symbol" style={{ color: flower.color }} aria-hidden="true">
-                    <Flower2 />
-                  </span>
-                  <div>
+                  <div className="flower-photo-wrap">
+                    <img className="flower-photo" src={flower.image} alt={flower.name} loading="lazy" />
+                    <span className="flower-color" style={{ backgroundColor: flower.color }} aria-hidden="true" />
+                  </div>
+                  <div className="flower-card-copy">
                     <h3>{flower.name}</h3>
                     <p>{flower.meaning}</p>
                   </div>
                 </article>
               ))}
             </div>
+            <details className="photo-credits">
+              <summary>Créditos de las fotografías</summary>
+              <ul>
+                {flowerCredits.map(([flower, credit, url]) => (
+                  <li key={flower}>
+                    <a href={url} target="_blank" rel="noreferrer">{flower}</a>: {credit}
+                  </li>
+                ))}
+              </ul>
+              <p>Fotografías obtenidas de Wikimedia Commons.</p>
+            </details>
           </div>
         </div>
       </section>
