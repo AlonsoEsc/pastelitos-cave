@@ -215,7 +215,7 @@ export default function Home() {
           <h1>Mariela<br />Alejandra</h1>
           <div className="mercy-script">Mercy</div>
           <p className="hero-intro">
-            Para ti, Mercy, porque conviertes los días comunes en recuerdos que quiero guardar.
+            Para ti, Mi Princesa, porque conviertes todos mis días en un recuedo que quiero guardar para siempre.
           </p>
           <a className="love-button" href="#ti">
             Entrar en tu mundo <Heart aria-hidden="true" fill="currentColor" />
@@ -224,7 +224,7 @@ export default function Home() {
 
         <div className="hero-collage" aria-label="Fotos destacadas de Mercy">
           <div className="photo-card photo-card-main" data-parallax="-0.05">
-            <img src={assetPath('/images/mercy-12.jpeg')} alt="Mercy sonriendo frente a un espejo" />
+            <img src={assetPath('/images/mercy-01.jpeg')} alt="Mercy sonriendo frente a un espejo" />
             <span>mi niña bonita ♡</span>
           </div>
           <div className="photo-card photo-card-small" data-parallax="0.08">
@@ -242,11 +242,11 @@ export default function Home() {
       <section id="ti" className="intro-section section-wrap">
         <div className="section-number">01</div>
         <div className="intro-title">
-          <p className="eyebrow">la protagonista de este rincón</p>
-          <h2>Tú eres <em>Mercy</em></h2>
+          <p className="eyebrow">la protagonista de este sitio</p>
+          <h2>Tú <em>Mi Princesa</em></h2>
         </div>
         <div className="intro-text">
-          <p>Tu nombre es Mariela Alejandra Cruz Aguirre, aunque para mí siempre eres Mercy.</p>
+          <p>Tu nombre es Mariela Alejandra Cruz Aguirre, aunque para mí siempre eres Mi Princesa.</p>
           <p>No solo apareces en una fotografía: haces que cada recuerdo tenga más luz. Reuní aquí un poquito de todo lo que te hace única.</p>
         </div>
         <div className="portrait-ribbon" data-parallax="0.025">
@@ -304,13 +304,13 @@ export default function Home() {
           </div>
 
           <form className="add-like" onSubmit={addLike}>
-            <label htmlFor="new-favorite">¿Qué otra cosita te encanta?</label>
+            <label htmlFor="new-favorite">¿Que otras cosillas te gustan más?</label>
             <div className="add-like-controls">
               <Input
                 id="new-favorite"
                 value={newLike}
                 onChange={(event) => setNewLike(event.target.value)}
-                placeholder="Ej. los atardeceres..."
+                placeholder="Ej. Yo..."
                 maxLength={60}
               />
               <Button type="submit" disabled={!newLike.trim()}>
@@ -324,9 +324,9 @@ export default function Home() {
             <div className="floriography-heading">
               <div>
                 <p className="eyebrow"><Flower2 aria-hidden="true" /> inspirado en tu guía de flores</p>
-                <h2 id="floriography-title">Una floriografía<br /><em>para Mercy</em></h2>
+                <h2 id="floriography-title">Una floriografía<br /><em>para Ti</em></h2>
               </div>
-              <p>Un pequeño diccionario para elegir una flor según lo que quieras decirle.</p>
+              <p>Un pequeño catalogo de todas las flores que te encantan y que iras recibiendo.</p>
             </div>
 
             <div className="flower-filters" aria-label="Filtrar flores por sentimiento">
@@ -414,12 +414,12 @@ export default function Home() {
         <div className="letter-cloud cloud-b" data-parallax="-0.05" />
         <div className="letter-card">
           <Sparkles className="letter-sparkle" aria-hidden="true" />
-          <p className="eyebrow">para ti, Mercy</p>
-          <h2>Que nunca olvides<br />lo <em>especial</em> que eres.</h2>
+          <p className="eyebrow">para ti, Mi princesa</p>
+          <h2>Que nunca olvides<br />lo <em>especial</em> que eres para mi.</h2>
           <p>
-            Este lugar guarda tus sonrisas, tus colores y esos pequeños detalles que te hacen ser tú. Ojalá cada visita te recuerde cuánto cariño cabe en tu nombre.
+            Este lugar guarda tus sonrisas, tus colores,esos pequeños detalles que te hacen ser tú y todas las cosas que a ti te encantan que iremos agregando día con día. Ojalá cada visita te recuerde lo mucho que te amo y lo especial que eres para mi.
           </p>
-          <div className="letter-signature">Con mucho amor <Heart fill="currentColor" aria-hidden="true" /></div>
+          <div className="letter-signature">Atte: Con mucho amor tú Gordito <Heart fill="currentColor" aria-hidden="true" /></div>
         </div>
       </section>
 
