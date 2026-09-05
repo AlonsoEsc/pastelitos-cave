@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { SyntheticEvent, useEffect, useMemo, useState } from 'react';
 import { Cloud, Flower2, Heart, Plus, Sparkles, X } from 'lucide-react';
 import type { CarouselApi } from '@/components/ui/carousel';
 import {
@@ -187,7 +187,7 @@ export default function Home() {
     window.localStorage.setItem('mercy-favorites', JSON.stringify(next));
   }
 
-  function addLike(event: FormEvent) {
+  function addLike(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
     const value = newLike.trim();
     if (!value) return;
